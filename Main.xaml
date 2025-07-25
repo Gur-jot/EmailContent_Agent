@@ -104,7 +104,7 @@
       <AssemblyReference>ProcessAgent_Output.WzT3X1D4XGP1rMRWS1tB3SY3</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="755,1535" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="755,1270" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="email_content" />
       <Variable x:TypeArguments="usavspb:ProcessAgent_Output" Name="outputArguments">
@@ -121,7 +121,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap:VirtualizedContainerService.HintSize="574,1512" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence sap:VirtualizedContainerService.HintSize="504,1247" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="MailMessage" />
       </Sequence.Variables>
@@ -130,7 +130,7 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:GetOutlookMailMessages Account="{x:Null}" Filter="{x:Null}" FilterByMessageIds="{x:Null}" TimeoutMS="{x:Null}" ConnectionMode="LegacyConfiguration" DisplayName="Get Outlook Desktop Mail Messages" GetAttachements="False" sap:VirtualizedContainerService.HintSize="540,122" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_3" MailFolder="Inbox" MarkAsRead="False" Messages="[MailMessage]" OnlyUnreadMessages="True" OrderByDate="NewestFirst" Top="3" UseISConnection="False">
+      <ui:GetOutlookMailMessages Account="{x:Null}" Filter="{x:Null}" FilterByMessageIds="{x:Null}" TimeoutMS="{x:Null}" ConnectionMode="LegacyConfiguration" DisplayName="Get Outlook Desktop Mail Messages" GetAttachements="False" sap:VirtualizedContainerService.HintSize="470,123" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_3" MailFolder="Inbox" MarkAsRead="False" Messages="[MailMessage]" OnlyUnreadMessages="True" OrderByDate="NewestFirst" Top="3" UseISConnection="False">
         <ui:GetOutlookMailMessages.ConnectionDetailsBackupSlot>
           <usau:BackupSlot x:TypeArguments="umae:ConnectionDetails" StoredValue="{x:Null}">
             <usau:BackupSlot.BackupValues>
@@ -139,13 +139,13 @@
           </usau:BackupSlot>
         </ui:GetOutlookMailMessages.ConnectionDetailsBackupSlot>
       </ui:GetOutlookMailMessages>
-      <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each currentMailMessage" sap:VirtualizedContainerService.HintSize="540,1307" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[MailMessage]">
+      <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each currentMailMessage" sap:VirtualizedContainerService.HintSize="470,1041" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[MailMessage]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="snm:MailMessage">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="currentMailMessage" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="538,1186" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="468,919" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <Sequence.Variables>
                 <Variable x:TypeArguments="usavsab:Agent_For_Email_Output" Name="Output" />
                 <Variable x:TypeArguments="ui:OrchestratorJob" Name="OutpuJobData" />
@@ -155,7 +155,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Assign sap:VirtualizedContainerService.HintSize="504,114" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <Assign sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_2">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[email_content]</OutArgument>
                 </Assign.To>
@@ -163,27 +163,8 @@
                   <InArgument x:TypeArguments="x:String">[currentMailMessage.Body]</InArgument>
                 </Assign.Value>
               </Assign>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="504,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[email_content]" />
-              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="504,276" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-                <ui:CommentOut.Body>
-                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="468,165" sap2010:WorkflowViewState.IdRef="Sequence_4">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_3">
-                      <Assign.To>
-                        <OutArgument x:TypeArguments="x:String">[email_content]</OutArgument>
-                      </Assign.To>
-                      <Assign.Value>
-                        <InArgument x:TypeArguments="x:String" xml:space="preserve">["{ ""message"": ""CAUTION: This email originated from outside of The Silicon Partners. Do not click links or open attachments unless you recognize the sender and know the content is safe.\r\n\r\nHi Team,  We have received a client escalation regarding the missing report from last week. This was part of the operations team’s responsibility. Person 2 has been handling these reports recently, so please ask them to look into it and respond to the client by EOD.  Thanks, Project Manager"", ""level"": ""Information"", ""logType"": ""User"", ""timeStamp"": ""11:07:28"", ""fileName"": ""Main"", ""jobId"": ""816fbba2-464a-437b-94eb-5b43ad96c54c"", ""robotName"": ""gurjot9801@gmail.com-attended"", ""machineId"": 5206398, ""userKey"": ""1c0fa5c9-e1a5-4c3d-9a5e-368922a212f7"", ""processVersion"": ""1.0.4"", ""organizationUnitId"": 6931718, ""businessOperationId"": ""5cab1f49ff324f32b97ebc8eca006146-18568cf439c542c69c74c2d7218462a6"" }"]</InArgument>
-                      </Assign.Value>
-                    </Assign>
-                  </Sequence>
-                </ui:CommentOut.Body>
-              </ui:CommentOut>
-              <uasj:RunJob ContinueOnError="False" DisplayName="Run Agent" ExecutionMode="Busy" FolderPath="gurjot9801@gmail.com's workspace/ProcessAgent" sap:VirtualizedContainerService.HintSize="504,226" sap2010:WorkflowViewState.IdRef="RunJob_2" Job="[OutpuJobData]" ProcessName="ProcessAgent" TimeoutMS="600000">
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[email_content]" />
+              <uasj:RunJob ContinueOnError="False" DisplayName="Run Agent" ExecutionMode="Busy" FolderPath="gurjot9801@gmail.com's workspace/ProcessAgent" sap:VirtualizedContainerService.HintSize="434,228" sap2010:WorkflowViewState.IdRef="RunJob_2" Job="[OutpuJobData]" ProcessName="ProcessAgent" TimeoutMS="600000">
                 <uasj:RunJob.Arguments>
                   <scg:Dictionary x:TypeArguments="x:String, Argument" />
                 </uasj:RunJob.Arguments>
@@ -196,8 +177,8 @@
                   <OutArgument x:TypeArguments="usavspb:ProcessAgent_Output">[outputArguments]</OutArgument>
                 </uasj:RunJob.Output>
               </uasj:RunJob>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="504,173" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[OutpuJobData.ToString]" />
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="504,164" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[OutpuJobData.OutputArguments.ToString]" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,175" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[OutpuJobData.ToString]" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,166" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[OutpuJobData.OutputArguments.ToString]" />
             </Sequence>
           </ActivityAction>
         </ui:ForEach.Body>
