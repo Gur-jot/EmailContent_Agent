@@ -104,7 +104,7 @@
       <AssemblyReference>ProcessAgent_Output.WzT3X1D4XGP1rMRWS1tB3SY3</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="755,1270" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="776,1270" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="email_content" />
       <Variable x:TypeArguments="usavspb:ProcessAgent_Output" Name="outputArguments">
